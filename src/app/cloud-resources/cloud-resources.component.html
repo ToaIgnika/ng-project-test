@@ -37,7 +37,7 @@
             <input matInput type="search" placeholder="Search by keywords">
           </mat-form-field>
           <mat-form-field>
-            <mat-select placeholder="All subscriptions">
+            <mat-select placeholder="All subscriptions" [(value)]="selected">
               <mat-option value="all">All subscriptions</mat-option>
               <mat-option value="internal-dev">Internal Dev</mat-option>
               <mat-option value="dev-test">Dev/Test</mat-option>
