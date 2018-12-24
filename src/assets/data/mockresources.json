@@ -1,14 +1,98 @@
 {
-    "email" : "",
-    "notifications" : "",
+    "email" : "dana@wildrook.com",
+    "notifications" : "true",
     "cloud-services" :
         [
             {
-                "name" : "",
-                "type" : "",
-                "resource-group" : "",
-                "subscription" : "",
-                "status" : ""
+                "name" : "sqlsrv01",
+                "type" : "SQL Server",
+                "resource-group" : "data-resources",
+                "subscription" : "Dev/Test",
+                "status" : "red"
+            },
+            {
+                "name" : "sqlsrv02",
+                "type" : "SQL Server",
+                "resource-group" : "data-resources",
+                "subscription" : "Dev/Test",
+                "status" : "green"
+            },
+            {
+                "name" : "sqlsrv01-backup",
+                "type" : "SQL Server",
+                "resource-group" : "data-resources",
+                "subscription" : "Dev/Test",
+                "status" : "red"
+            },
+            {
+                "name" : "vm-web-01",
+                "type" : "Virtual Machine",
+                "resource-group" : "MainApp",
+                "subscription" : "Pay-as-you-go",
+                "status" : "orange"
+            },
+            {
+                "name" : "mysqldb01-prod",
+                "type" : "SQL Database",
+                "resource-group" : "MainApp",
+                "subscription" : "Pay-as-you-go",
+                "status" : "green"
+            },
+            {
+                "name" : "sqlsrv01-prod",
+                "type" : "SQL Server",
+                "resource-group" : "MainApp",
+                "subscription" : "Pay-as-you-go",
+                "status" : "green"
+            },
+            {
+                "name" : "sql-trial",
+                "type" : "SQL Server",
+                "resource-group" : "Test Lab",
+                "subscription" : "Azure Trial",
+                "status" : "green"
+            },
+            {
+                "name" : "db-test",
+                "type" : "SQL Database",
+                "resource-group" : "Test Lab",
+                "subscription" : "Azure Trial",
+                "status" : "green"
+            },
+            {
+                "name" : "test.contoso.com",
+                "type" : "SSL Certificate",
+                "resource-group" : "Test Lab",
+                "subscription" : "Azure Trial",
+                "status" : "orange"
+            },
+            {
+                "name" : "test-app",
+                "type" : "Web App",
+                "resource-group" : "Test Lab",
+                "subscription" : "Azure Trial",
+                "status" : "green"
+            },
+            {
+                "name" : "test-app-vault",
+                "type" : "Key Vault",
+                "resource-group" : "SecureOps",
+                "subscription" : "Internal Dev",
+                "status" : "green"
+            },
+            {
+                "name" : "websiteprod",
+                "type" : "Storage",
+                "resource-group" : "MainApp",
+                "subscription" : "Pay-as-you-go",
+                "status" : "red"
+            },
+            {
+                "name" : "demo-sql",
+                "type" : "SQL Server",
+                "resource-group" : "BetaPod",
+                "subscription" : "Internal Dev",
+                "status" : "green"
             }
         ]
 }
