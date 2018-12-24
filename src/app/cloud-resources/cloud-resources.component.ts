@@ -1,25 +1,8 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DataSource } from '@angular/cdk/table';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-cloud-resources',
@@ -28,8 +11,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class CloudResourcesComponent implements OnDestroy {
-  displayedColumns: string[] = ['position', 'name', 'symbol','weight'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['status', 'name', 'type','resource-group', 'subscription'];
+  dataSource : any;
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 4}, (_, i) => `Nav Item ${i + 1}`);
@@ -43,7 +26,8 @@ export class CloudResourcesComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private http: HttpClient) {
+    this.getListData();
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -51,6 +35,26 @@ export class CloudResourcesComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+
+  getListData() {
+
+    var config = {
+      headers: {
+        "Content-Type": "application/json; charset = utf-8;"
+      }
+    };
+    this.http.get("http://localhost:4200/assets/data/mockresources.json", config)
+      .subscribe(
+        (res) => {
+          console.log(res['cloud-services']);
+          this.dataSource = res['cloud-services'];
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 
 }
