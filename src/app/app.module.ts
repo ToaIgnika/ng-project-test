@@ -6,7 +6,16 @@ import { AppComponent } from './app.component';
 
 import {FlexLayoutModule} from '@angular/flex-layout'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CloudResourcesComponent } from './cloud-resources/cloud-resources.component'
+import {CloudResourcesComponent} from './cloud-resources/cloud-resources.component'
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list'
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,7 +26,16 @@ import { CloudResourcesComponent } from './cloud-resources/cloud-resources.compo
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatTabsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
