@@ -1,0 +1,15 @@
+{
+    "email" : "",
+    "notifications" : "",
+    "cloud-services" :
+        [
+            {
+                "name" : "",
+                "type" : "",
+                "resource-group" : "",
+                "subscription" : "",
+                "status" : ""
+            }
+        ]
+}
+
