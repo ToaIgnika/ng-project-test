@@ -5,15 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {FlexLayoutModule} from '@angular/flex-layout'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CloudResourcesComponent } from './cloud-resources/cloud-resources.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CloudResourcesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
