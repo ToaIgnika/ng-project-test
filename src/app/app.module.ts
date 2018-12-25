@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 import { OverviewComponent } from './cloud-resources/overview/overview.component';
 
@@ -46,7 +47,8 @@ import { OverviewComponent } from './cloud-resources/overview/overview.component
     MatSelectModule,
     MatTableModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,23 @@
-<mat-form-field class="example-full-width">
-  <input matInput type="search" [(value)]="searchFilter" placeholder="Search by keywords" (input)="onSearchChange($event.target.value)">
-</mat-form-field>
-<mat-form-field>
-  <mat-select  [(value)]="selectFilter" (selectionChange)="onSelectChange($event.value)">
-    <mat-option value="All subscriptions">All subscriptions</mat-option>
-    <mat-option value="Internal Dev">Internal Dev</mat-option>
-    <mat-option value="Dev/Test">Dev/Test</mat-option>
-    <mat-option value="Pay-as-you-go">Pay-as-you-go</mat-option>
-    <mat-option value="Azure Trial">Azure Trial</mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="container" fxLayout="row">
+  <div fxFlex="75%">
+      <mat-form-field class="example-full-width">
+          <input matInput type="search" [(value)]="searchFilter" placeholder="Search by keywords" (input)="onSearchChange($event.target.value)">
+        </mat-form-field>
+  </div>
+  <div fxFlex="25%">
+      <mat-form-field>
+          <mat-select  [(value)]="selectFilter" (selectionChange)="onSelectChange($event.value)">
+            <mat-option value="All subscriptions">All subscriptions</mat-option>
+            <mat-option value="Internal Dev">Internal Dev</mat-option>
+            <mat-option value="Dev/Test">Dev/Test</mat-option>
+            <mat-option value="Pay-as-you-go">Pay-as-you-go</mat-option>
+            <mat-option value="Azure Trial">Azure Trial</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+
+
 
 <table mat-table [dataSource]="dataDisplay" class="mat-elevation-z8">
 
