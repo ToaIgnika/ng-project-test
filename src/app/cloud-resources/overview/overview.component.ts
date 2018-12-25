@@ -7,7 +7,7 @@ import { DataService } from '../../services/data.service'
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  displayedColumns: string[] = ['status', 'name', 'type', 'resource-group', 'subscription'];
+  displayedColumns: string[] = ['status', 'name', 'type', 'resource-group', 'subscription', 'edit'];
   dataSource: any;
   dataDisplay: any;
 
@@ -16,7 +16,6 @@ export class OverviewComponent implements OnInit {
 
   constructor(dataService: DataService) {
     dataService.getData().subscribe(res => {
-      console.log(res);
       this.dataSource = res['cloud-services'];
       this.dataDisplay = this.dataSource;
     });
@@ -33,8 +32,7 @@ export class OverviewComponent implements OnInit {
         item => item.subscription === this.selectFilter
       );
     }
-    console.log(this.dataDisplay)
-    console.log(this.searchFilter)
+   
     if (this.searchFilter != "") {
       this.dataDisplay = this.dataDisplay.filter(
         item =>
