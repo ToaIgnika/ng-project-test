@@ -29,6 +29,4 @@ export class CloudResourcesComponent implements OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
- 
-
 }

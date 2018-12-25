@@ -1,17 +1,17 @@
 <mat-form-field class="example-full-width">
-  <input matInput type="search" placeholder="Search by keywords">
+  <input matInput type="search" [(value)]="searchFilter" placeholder="Search by keywords" (input)="onSearchChange($event.target.value)">
 </mat-form-field>
 <mat-form-field>
-  <mat-select placeholder="All subscriptions" [(value)]="selected" (selectionChange)="filterList($event.value)">
-    <mat-option value="all">All subscriptions</mat-option>
-    <mat-option value="internal-dev">Internal Dev</mat-option>
-    <mat-option value="dev-test">Dev/Test</mat-option>
-    <mat-option value="pay-as-you-go">Pay-as-you-go</mat-option>
-    <mat-option value="azure-trial">Azure Trial</mat-option>
+  <mat-select  [(value)]="selectFilter" (selectionChange)="onSelectChange($event.value)">
+    <mat-option value="All subscriptions">All subscriptions</mat-option>
+    <mat-option value="Internal Dev">Internal Dev</mat-option>
+    <mat-option value="Dev/Test">Dev/Test</mat-option>
+    <mat-option value="Pay-as-you-go">Pay-as-you-go</mat-option>
+    <mat-option value="Azure Trial">Azure Trial</mat-option>
   </mat-select>
 </mat-form-field>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataDisplay" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
