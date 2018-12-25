@@ -18,11 +18,13 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import { OverviewComponent } from './cloud-resources/overview/overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CloudResourcesComponent
+    CloudResourcesComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
