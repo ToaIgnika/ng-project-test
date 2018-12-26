@@ -24,13 +24,17 @@ import {MatCardModule} from '@angular/material/card';
 
 import { OverviewComponent } from './cloud-resources/overview/overview.component';
 import { NavigationListComponent } from './common/navigation-list/navigation-list.component';
+import { NavigationHeaderComponent } from './common/navigation-header/navigation-header.component';
+import { ToolbarComponent } from './common/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CloudResourcesComponent,
     OverviewComponent,
-    NavigationListComponent
+    NavigationListComponent,
+    NavigationHeaderComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

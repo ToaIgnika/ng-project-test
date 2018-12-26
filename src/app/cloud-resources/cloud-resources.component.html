@@ -1,11 +1,7 @@
 <div class="example-container">
     <mat-sidenav-container class="example-container">
         <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-           <div style="border-bottom: 1px #e4e4e4 solid; padding: 16px;">
-            <img src="../../assets/wolf_logo.png"/>
-             <h3 style="margin-bottom:0px;">Audit Wolf</h3>
-             <p style="color:grey; margin-top:0px;">Portal</p>
-           </div>
+          <app-navigation-header></app-navigation-header>
           <app-navigation-list></app-navigation-list>
         </mat-sidenav>
       
@@ -16,9 +12,10 @@
               </button>
               <!-- This fills the remaining space of the current row -->
               <span class="example-fill-remaining-space"></span>
-              <mat-icon>mail_outline</mat-icon>
+              <mat-icon svgIcon="notification_active" *ngIf="notification"></mat-icon>
+              <mat-icon *ngIf="!notification">mail_outline</mat-icon>
               <span>
-                 email     
+                  &nbsp;&nbsp;{{email}}     
             </span>
             <mat-menu #appMenu="matMenu">
                 <button mat-menu-item>Account</button>

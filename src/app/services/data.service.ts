@@ -13,8 +13,6 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-
-  
   getData(): Observable<any> {
     var config = {
       headers: {

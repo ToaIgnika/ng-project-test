@@ -11,16 +11,22 @@ import { DataService } from '../services/data.service'
 export class CloudResourcesComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
-
+  email : any = "";
+  notification : boolean = false;
   
   private _mobileQueryListener: () => void;
   opened: boolean = true;
   
+
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
+    dataService: DataService
     ) {
-   
+      dataService.getData().subscribe(res => {
+        this.email = res['email'];
+        this.notification = res['notification'];
+      });
    }
 
   ngOnDestroy(): void {

@@ -1,6 +1,6 @@
 {
     "email" : "dana@wildrook.com",
-    "notifications" : "true",
+    "notification" : true,
     "cloud-services" :
         [
             {
