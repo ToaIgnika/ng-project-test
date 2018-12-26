@@ -7,18 +7,17 @@
       
         <mat-sidenav-content>
           <mat-toolbar color="primary" class="example-toolbar">
-              <button mat-icon-button (click)="sidenav.toggle()">
+              <button *ngIf="mobileQuery.matches" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
               </button>
               <!-- This fills the remaining space of the current row -->
               <span class="example-fill-remaining-space"></span>
               <mat-icon svgIcon="notification_active" *ngIf="notification"></mat-icon>
               <mat-icon *ngIf="!notification">mail_outline</mat-icon>
-              <span>
-                  &nbsp;&nbsp;{{email}}     
-            </span>
+              <span>&nbsp;&nbsp;{{email}}</span>
             <mat-menu #appMenu="matMenu">
                 <button mat-menu-item>Account</button>
+                <button mat-menu-item>Messages</button>
                 <button mat-menu-item>Logout</button>
               </mat-menu>
               
@@ -27,7 +26,7 @@
               </button> 
             </mat-toolbar>
           <mat-card style="margin:10px">
-              <h3>Cloud resources</h3>
+              <h5 style="color:grey;">YOUR CLOUD RESOURCES</h5>
               <mat-tab-group>
                 <mat-tab label="OVERVIEW">
                   <app-overview></app-overview>

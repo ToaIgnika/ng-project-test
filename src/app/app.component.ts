@@ -16,11 +16,11 @@ export class AppComponent {
     ) {
       this.matIconRegistry.addSvgIcon(
         "notification_active",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/notification_active.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/notification_active.svg")
       );
       this.matIconRegistry.addSvgIcon(
         "pie_chart_outline",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/pie-chart-outline.svg")
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/pie-chart-outline.svg")
       );
   }
 }

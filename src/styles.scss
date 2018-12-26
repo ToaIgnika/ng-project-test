@@ -32,6 +32,12 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
 
+ .active-link {
+    
+    background-color: #eff6eb;
+    color: #70ad47;
+}
+
  .mat-tab-label-active {
      color: #70ad47;
  }

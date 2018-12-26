@@ -11,10 +11,11 @@ import { DataService } from '../services/data.service'
 export class CloudResourcesComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
+
   email : any = "";
   notification : boolean = false;
   
-  private _mobileQueryListener: () => void;
   opened: boolean = true;
   
 
@@ -23,14 +24,27 @@ export class CloudResourcesComponent implements OnDestroy {
     media: MediaMatcher,
     dataService: DataService
     ) {
+      this.mobileQuery = media.matchMedia('(max-width: 768px)');
+      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+      this.mobileQuery.addListener(this._mobileQueryListener);
+     
+      this.opened = !this.mobileQuery.matches;
+
+      this.mobileQuery.onchange = () => {
+        this.opened = !this.mobileQuery.matches;
+      }
+
       dataService.getData().subscribe(res => {
         this.email = res['email'];
         this.notification = res['notification'];
       });
+  
+    
+      //console.log(this.mobileQuery.matches);
    }
 
   ngOnDestroy(): void {
-    //this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
 }
