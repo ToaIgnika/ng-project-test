@@ -23,12 +23,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
 import { OverviewComponent } from './cloud-resources/overview/overview.component';
+import { NavigationListComponent } from './common/navigation-list/navigation-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CloudResourcesComponent,
-    OverviewComponent
+    OverviewComponent,
+    NavigationListComponent
   ],
   imports: [
     BrowserModule,
