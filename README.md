@@ -1,6 +1,6 @@
 ### Overview
 Before I started the project, I spent time looking over and sketching the component breakdown and figuring out the JSON data layout.
-![Tux, the Linux mascot](https://raw.githubusercontent.com/ToaIgnika/ng-project-test/master/src/assets/img/pastedImage.png)
+![Tux, the Linux mascot](https://raw.githubusercontent.com/ToaIgnika/ng-project-test/master/src/assets/img/sketch.jpg)
 
 The assigned requirement looked pretty simple in the beginning but quickly became a challenge since I have no prior experience with Material or FlexLayout (I was working with Bootrap 4 for all of my projects). Learning to use and style Material components was the biggest challenge for me in the project. 
 
