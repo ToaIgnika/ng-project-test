@@ -3,10 +3,17 @@ table {
   box-shadow: none;
 }
 
+th {
+  font-weight: bold;
+}
+
 .search-bar {
   border: #b6d5a2 solid 1px;
   border-radius: 5px;
   margin: 13.5px 0px 13.5px 0px;
   padding: 10px;
- 
+}
+
+mat-form-field {
+  width: 90%;
 }
